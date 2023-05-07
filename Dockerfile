@@ -1,6 +1,6 @@
-FROM httpd
-WORKDIR cd /var/www/html/
+FROM nginx
+WORKDIR usr/share/nginx/html
 RUN touch index.html
 RUN echo "i love u" > index.html
 EXPOSE 80
-CMD ["httpd" ,"-d" ,"foreground;"]
+CMD ["nginx" ,"-d" ,"daemons off;"]
